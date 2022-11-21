@@ -1,0 +1,58 @@
+.orders--dashboard {
+  margin-left: 120px;
+}
+
+/* Table Styles*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: "Open Sans", sans-serif;
+  border: 1px solid black;
+}
+
+#ordersTable thead {
+  cursor: pointer;
+  background: #c9dff0;
+}
+
+#ordersTable thead tr th {
+  font-weight: bold;
+  padding: 12px 30px;
+  padding-left: 42px;
+}
+
+#ordersTable thead tr th span {
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#ordersTable thead tr th.headerSortUp,
+#ordersTable thead tr th.headerSortDown {
+  background: #acc8dd;
+}
+
+#ordersTable tbody tr {
+  color: #555;
+}
+
+#ordersTable tbody tr td {
+  text-align: left;
+  padding: 2px 10px;
+}
+
+#ordersTable tbody tr td.lalign {
+  text-align: left;
+}
+
+#ordersTable tbody tr td[data-status="delivered"]:after {
+  color: green;
+}
+
+#ordersTable tbody tr td[data-status="shipped"]:after {
+  color: black;
+}
+
+#ordersTable tbody tr td[data-status="processing"]:after {
+  color: red;
+}

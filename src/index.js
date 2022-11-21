@@ -21,8 +21,10 @@ loginForm.addEventListener("submit", function (event) {
     .then((resp) => {
       const tokenValue = resp.data.access_token;
       localStorage.setItem("accessToken", tokenValue);
+      window.location.replace("./components/dashboard/dashboard.html");
     })
     .catch(function (error) {
       alert("The username or password is incorrect");
     });
 });
+

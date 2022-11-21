@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANALYTICS DASHBOARD</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <!--Google Font(s)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap"
+      rel="stylesheet"
+    />
+    <!--Other Libraries-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+  <body>
+    <div class="sidenav">
+      <img
+        src="../../../public/assets/Freddys_Logo.svg"
+        alt="logo"
+        style="width: 60px; height: 100px; padding-left: 10px"
+      />
+      <p onclick="toMainDashboard();">Dashboard</p>
+      <p onclick="toOrders();">Orders</p>
+      <p onclick="toLogout();">Logout</p>
+    </div>
+
+    <!-- MAIN DASHBOARD -->
+    <div class="dashboard__main--section">
+      <div style="margin-right: 40px"></div>
+      <div class="vl" />
+      <div style="margin-left: 80px">
+        <h2 class="dashboard--headers">Dashboard</h2>
+        <div class="dashboard__categories">
+          <div class="dashboard__categories--styles">
+            <p>Today</p>
+            <p id="today-id"></p>
+          </div>
+          <div class="dashboard__categories--styles">
+            <p>Last Week</p>
+            <p id="last-week"></p>
+          </div>
+          <div class="dashboard__categories--styles">
+            <p>Last Month</p>
+            <p id="last-month"></p>
+          </div>
+        </div>
+        <div>
+          <h2 class="dashboard--headers">
+            <span id="revenue-duration">Revenue (last 7 days)</span>
+            <label class="switch">
+              <input type="checkbox" onclick="toggleDiv('mydiv');" />
+              <span class="slider round"></span>
+            </label>
+          </h2>
+          <div id="mydivon" style="display: block">
+            <canvas
+              id="myChartOne"
+              style="width: 100%; max-width: 500px"
+            ></canvas>
+          </div>
+          <div id="mydivoff" style="display: none">
+            <canvas
+              id="myChartTwo"
+              style="width: 100%; max-width: 500px"
+            ></canvas>
+          </div>
+        </div>
+        <div>
+          <h2 class="dashboard--headers">Bestsellers</h2>
+          <table id="bestsellersTable" cellspacing="0" cellpadding="0"></table>
+        </div>
+      </div>
+    </div>
+    <script src="../../constants/index.js"></script>
+    <script src="../../utils/priceFormatter/index.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
