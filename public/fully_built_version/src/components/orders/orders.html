@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANALYTICS DASHBOARD</title>
+    <!--CSS -->
+    <link rel="stylesheet" href="../dashboard/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <!--Google Font(s)-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!--Other Libraries-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="sidenav">
+      <img
+        src="../../../public/assets/Freddys_Logo.svg"
+        alt="logo"
+        style="width: 60px; height: 100px; padding-left: 10px"
+      />
+      <p onclick="toMainDashboard();" style="cursor: pointer">Dashboard</p>
+      <p onclick="toOrders();" style="cursor: pointer">Orders</p>
+      <p onclick="toLogout();" style="cursor: pointer">Logout</p>
+    </div>
+    <!-- ORDERS -->
+    <div class="orders--dashboard">
+      <div>
+        <h4>
+          Orders
+          <button onclick="filterFunction()" class="orders--filter">
+            <i style="font-size: 24px" class="fa">&#xf002;</i>
+            <input type="search" id="gsearch" name="gsearch" />
+          </button>
+        </h4>
+        <table id="ordersTable" cellspacing="0" cellpadding="0"></table>
+        <br />
+        <h5 id="orderPages"></h5>
+        <button onclick="previousFunction()" class="pagination--btn">
+          Previous
+        </button>
+        <button onclick="nextFunction()" class="pagination--btn">Next</button>
+      </div>
+    </div>
+    <script src="../../constants/index.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>

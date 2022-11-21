@@ -1,0 +1,154 @@
+/* Dashboard Styles*/
+.dashboard__categories {
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard__categories--styles {
+  border: 4px solid grey;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
+  width: 200px;
+  border-radius: 10px;
+  /* font-family: "Signika", sans-serif; */
+}
+
+.dashboard__main--section {
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard--headers {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Vertical Line*/
+.vl {
+  /* height: 100%;
+  width: 1px;
+  border-left: 1px solid black; */
+}
+
+/* Switch Style Component */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider Styling */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Table Styles*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: "Vollkorn", serif;
+  border: 1px solid black;
+}
+
+#bestsellersTable thead {
+  cursor: pointer;
+  background: #c9dff0;
+}
+
+#bestsellersTable thead tr th {
+  font-weight: bold;
+  padding: 12px 30px;
+  padding-left: 42px;
+}
+
+#bestsellersTable thead tr th span {
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+#bestsellersTable thead tr th.headerSortUp,
+#bestsellersTable thead tr th.headerSortDown {
+  background: #acc8dd;
+}
+
+#bestsellersTable tbody tr {
+  color: #555;
+}
+
+#bestsellersTable tbody tr td {
+  text-align: center;
+  padding: 15px 10px;
+}
+
+#bestsellersTable tbody tr td.lalign {
+  text-align: left;
+}
+
+/* side navigation */
+.sidenav {
+  height: 100%;
+  width: 100px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(233, 217, 217);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav p {
+  padding-left: 5px;
+}
