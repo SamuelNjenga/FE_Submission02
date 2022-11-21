@@ -7,7 +7,6 @@ const headers_ = {
 // When the form is submitted...
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  console.log("EH");
   // POST the data
   axios
     .post(
@@ -27,4 +26,3 @@ loginForm.addEventListener("submit", function (event) {
       alert("The username or password is incorrect");
     });
 });
-
