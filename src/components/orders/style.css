@@ -46,15 +46,15 @@ table {
   text-align: left;
 }
 
-#ordersTable tbody tr td[data-status="delivered"]{
+#ordersTable tbody tr td[data-status="delivered"] {
   color: green;
 }
 
-#ordersTable tbody tr td[data-status="processing"]{
+#ordersTable tbody tr td[data-status="processing"] {
   color: red;
 }
 
-#ordersTable tbody tr td[data-status="shipped"]{
+#ordersTable tbody tr td[data-status="shipped"] {
   color: black;
 }
 
@@ -109,4 +109,8 @@ table {
 .pagination--btn:active {
   background-color: #298e46;
   box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
+}
+
+.orders--filter {
+  margin-left: 500px;
 }
