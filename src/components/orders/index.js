@@ -17,10 +17,10 @@ const filterFunction = () => {
       function renderTable() {
         // create html
         let li = "";
-        li += `<tr><th style="text-align: left; padding-left: 10px"><span>Product Name</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Date</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Price</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Status</span></th></tr>`;
+        li += `<tr><th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Product Name</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Date</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Price</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Status</span></th></tr>`;
         ordersData
           .filter((row, index) => {
             let start = (currentPage - 1) * pageSize;
@@ -32,7 +32,9 @@ const filterFunction = () => {
         <td>${order.product.name}</td>
         <td>${moment(order.created_at).format("MMMM Do YYYY, h:mm:ss a")} </td>
         <td>${(order.total / order.product.quantity).toFixed(2)}</td>
-        <td>${order.status}</td>
+        <td data-status="${order.status}" style="text-transform: capitalize"> 
+        ${order.status}
+        </td>
       </tr>`;
           });
         document.getElementById("ordersTable").innerHTML = li;
@@ -49,10 +51,10 @@ axios
 
     // create html
     let li = "";
-    li += `<tr><th style="text-align: left; padding-left: 10px"><span>Product Name</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Date</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Price</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Status</span></th></tr>`;
+    li += `<tr><th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Product Name</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Date</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Price</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Status</span></th></tr>`;
     ordersData
       .filter((row, index) => {
         let start = (currentPage - 1) * pageSize;
@@ -64,7 +66,9 @@ axios
         <td>${order.product.name}</td>
         <td>${moment(order.created_at).format("MMMM Do YYYY, h:mm:ss a")} </td>
         <td>${(order.total / order.product.quantity).toFixed(2)}</td>
-        <td>${order.status}</td>
+        <td data-status="${order.status}" style="text-transform: capitalize"> 
+        ${order.status}
+        </td>
       </tr>`;
       });
     document.getElementById("orderPages").innerHTML =
@@ -82,10 +86,10 @@ const nextFunction = async () => {
 
       // create html
       let li = "";
-      li += `<tr><th style="text-align: left; padding-left: 10px"><span>Product Name</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Date</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Price</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Status</span></th></tr>`;
+      li += `<tr><th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Product Name</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Date</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Price</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Status</span></th></tr>`;
       let list = ordersData.filter((row, index) => {
         let start = 0;
         let end = 50;
@@ -96,7 +100,9 @@ const nextFunction = async () => {
         <td>${order.product.name}</td>
         <td>${moment(order.created_at).format("MMMM Do YYYY, h:mm:ss a")} </td>
         <td>${(order.total / order.product.quantity).toFixed(2)}</td>
-        <td>${order.status}</td>
+        <td data-status="${order.status}" style="text-transform: capitalize"> 
+        ${order.status}
+        </td>
       </tr>`;
       });
 
@@ -116,10 +122,10 @@ const previousFunction = async () => {
 
       // create html
       let li = "";
-      li += `<tr><th style="text-align: left; padding-left: 10px"><span>Product Name</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Date</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Price</span></th>
-                <th style="text-align: left; padding-left: 10px"><span>Status</span></th></tr>`;
+      li += `<tr><th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Product Name</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Date</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Price</span></th>
+                <th style="text-align: left; padding-left: 10px; font-weight: 300;"><span>Status</span></th></tr>`;
 
       let list = ordersData.filter((row, index) => {
         let start = 0;
@@ -132,7 +138,9 @@ const previousFunction = async () => {
         <td>${order.product.name}</td>
         <td>${moment(order.created_at).format("MMMM Do YYYY, h:mm:ss a")} </td>
         <td>${(order.total / order.product.quantity).toFixed(2)}</td>
-        <td>${order.status}</td>
+        <td data-status="${order.status}" style="text-transform: capitalize"> 
+        ${order.status}
+        </td>
       </tr>`;
       });
       document.getElementById("orderPages").innerHTML =

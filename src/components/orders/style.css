@@ -8,6 +8,7 @@ table {
   border-spacing: 0;
   font-family: "Open Sans", sans-serif;
   border: 1px solid black;
+  font-weight: 700;
 }
 
 #ordersTable thead {
@@ -45,16 +46,16 @@ table {
   text-align: left;
 }
 
-#ordersTable tbody tr td[data-status="delivered"]:after {
+#ordersTable tbody tr td[data-status="delivered"]{
   color: green;
 }
 
-#ordersTable tbody tr td[data-status="shipped"]:after {
-  color: black;
+#ordersTable tbody tr td[data-status="processing"]{
+  color: red;
 }
 
-#ordersTable tbody tr td[data-status="processing"]:after {
-  color: red;
+#ordersTable tbody tr td[data-status="shipped"]{
+  color: black;
 }
 
 .pagination--btn {
